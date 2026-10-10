@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
+// Class data produk. Jumlah di keranjang sekarang disimpan di CartProvider (cartQuantities)
 class Product {
+  final String id; // id unik, dipakai sebagai key di cartQuantities
   final String name;
   final String description;
   final int price;
   final String image;
   final Color color;
   final Color softColor;
-  int stock; // jumlah stok tersedia
-  int cartQty; // jumlah produk ini di keranjang (0 = belum masuk keranjang)
+  int stock; // jumlah stok tersedia (berubah saat masuk keranjang)
 
   Product({
+    required this.id,
     required this.name,
     required this.description,
     required this.price,
@@ -18,7 +20,6 @@ class Product {
     required this.color,
     required this.softColor,
     required this.stock,
-    this.cartQty = 0,
   });
 }
 
